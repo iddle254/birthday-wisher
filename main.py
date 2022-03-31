@@ -12,6 +12,7 @@ today = (dt.datetime.now().month, dt.datetime.now().day)
 
 mails = read_csv("./birthdays.csv")
 
+
 birthdays_dict = {(row.month, row.day): row for (index, row) in mails.iterrows()}
 if today in birthdays_dict:
     birthday_person=birthdays_dict[today]
@@ -32,3 +33,4 @@ if today in birthdays_dict:
             msg=f"Subject:Happy birthday\n\n{contents}"
 
         )
+
